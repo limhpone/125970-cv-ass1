@@ -1,22 +1,10 @@
-Computer Vision Assignment 1 – CameraApp
+# Computer Vision Assignment 1 – CameraApp
 
 A Python OpenCV application for real-time webcam capture, image processing, panorama creation, camera calibration, and augmented reality.
 This project fulfills Assignment #1 requirements.
 
-📂 Project Structure
-125970-CV-ASS1/
-│── main.py              # Entry point for running the application
-│── camera.py            # Core implementation of CameraApp
-│── calibration.npz      # Generated camera calibration parameters
-│── trex_model.obj       # 3D T-Rex model used in AR mode
-│── A4_ArUco_Marker.png  # ArUco marker for AR
-│── A4_Chessboard_9x6.png# Chessboard for calibration
-│── output/              # Panorama outputs
-│── pyproject.toml       # Project metadata + dependencies
-│── uv.lock              # Environment lock file
-│── README.md            # Documentation
 
-✅ Features Implemented
+## ✅ Features Implemented
 
 Image Processing: RGB ↔ Gray ↔ HSV, contrast/brightness, histogram
 
@@ -62,7 +50,7 @@ uv run main.py
 
 (or python main.py if using pip venv)
 
-🎮 Controls
+## 🎮 Controls
 Key	Function
 1	Color mode
 2	Grayscale mode
@@ -100,7 +88,7 @@ Press R → AR mode runs
 
 Projects trex_model.obj on detected marker
 
-📝 Notes
+## 📝 Notes
 
 Python >=3.12 required
 
