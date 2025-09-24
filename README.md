@@ -1,7 +1,9 @@
-# Computer Vision Assignment 1 – CameraApp
+# Computer Vision Assignment 1 – CameraApp: 125970 
+
 
 A Python OpenCV application for real-time webcam capture, image processing, panorama creation, camera calibration, and augmented reality.  
 This project fulfills **Assignment #1** requirements.
+Aye Khin Khin Hpone (Yolanda Lim)_125970
 
 ---
 
@@ -50,29 +52,29 @@ Copy code
 uv run main.py
 Using pip:
 
-bash
-Copy code
-python main.py
-🎮 Controls
-Key	Function
-1	Color mode
-2	Grayscale mode
-3	HSV mode
-A	Brightness/Contrast
-H	Histogram
-G	Gaussian blur
-B	Bilateral filter
-C	Canny edges
-D	Hough lines
-T	Transform mode
-0	Reset transform
-P	Panorama mode ON/OFF
-Z	Capture panorama frame
-O	Build panorama
-X	Reset panorama
-K	Calibrate camera
-R	Run AR mode
-Q	Quit
+## 🎮 Controls
+
+| Key | Function               |
+|-----|------------------------|
+| 1   | Color mode             |
+| 2   | Grayscale mode         |
+| 3   | HSV mode               |
+| A   | Brightness/Contrast    |
+| H   | Histogram              |
+| G   | Gaussian blur          |
+| B   | Bilateral filter       |
+| C   | Canny edges            |
+| D   | Hough lines            |
+| T   | Transform mode         |
+| 0   | Reset transform        |
+| P   | Panorama mode ON/OFF   |
+| Z   | Capture panorama frame |
+| O   | Build panorama         |
+| X   | Reset panorama         |
+| K   | Calibrate camera       |
+| R   | Run AR mode            |
+| Q   | Quit                   |
+
 
 📷 Calibration & AR
 Calibration
@@ -89,7 +91,7 @@ Press R to start AR mode
 
 Projects trex_model.obj on the detected marker
 
-📝 Notes
+### Notes
 Requires Python >= 3.12
 
 Needs a working webcam
