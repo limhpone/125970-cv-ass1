@@ -1,85 +1,109 @@
-# CameraApp
+Computer Vision Assignment 1 – CameraApp
 
-A simple Python OpenCV application for real-time webcam capture with interactive color modes, brightness/contrast adjustment, histogram visualization, and Gaussian blur.
+A Python OpenCV application for real-time webcam capture, image processing, panorama creation, camera calibration, and augmented reality.
+This project fulfills Assignment #1 requirements.
 
-## Features
+📂 Project Structure
+125970-CV-ASS1/
+│── main.py              # Entry point for running the application
+│── camera.py            # Core implementation of CameraApp
+│── calibration.npz      # Generated camera calibration parameters
+│── trex_model.obj       # 3D T-Rex model used in AR mode
+│── A4_ArUco_Marker.png  # ArUco marker for AR
+│── A4_Chessboard_9x6.png# Chessboard for calibration
+│── output/              # Panorama outputs
+│── pyproject.toml       # Project metadata + dependencies
+│── uv.lock              # Environment lock file
+│── README.md            # Documentation
 
-- **Live Webcam Feed**  
-    Displays real-time video from your default camera.
+✅ Features Implemented
 
-- **Color Modes**  
-    - `COLOR`: Standard BGR color.
-    - `GRAY`: Grayscale.
-    - `HSV`: HSV color space.
+Image Processing: RGB ↔ Gray ↔ HSV, contrast/brightness, histogram
 
-- **Brightness & Contrast Adjustment**  
-    - Toggle adjustment mode with `B`.
-    - Adjust contrast (`Alpha`) and brightness (`Beta`) using trackbars.
+Filters: Gaussian, Bilateral
 
-- **Histogram Visualization**  
-    - Toggle histogram display with `S`.
-    - Shows intensity distribution for the current mode.
+Edges & Lines: Canny, Hough transform
 
-- **Gaussian Blur**  
-    - Toggle Gaussian blur with `G`.
-    - Smooths the video feed for noise reduction.
+Transformations: Translation, rotation, scaling
 
-- **Bilateral Filter**  
-    - Toggle Gaussian blur with `B`.
-    - Applies edge-preserving smoothing to reduce noise while keeping edges sharp.
+Panorama: Manual stitching (ORB + Homography, not built-in OpenCV function)
 
-- **Canny Edge Detection**
-    - Toggle Canny edge detection with `C`.
-    - Detects edges in the video feed using adjustable thresholds.
+Camera Calibration: With chessboard pattern (A4_Chessboard_9x6.png)
 
-- **Hough Line Detection**
-    - Toggle Hough line detection with `D`.
+Augmented Reality: AR marker detection + T-Rex model overlay
 
-- **Keyboard Controls**
-    - `1`: Switch to Color mode
-    - `2`: Switch to Grayscale mode
-    - `3`: Switch to HSV mode
-    - `A`: Toggle brightness/contrast adjustment
-    - `H`: Toggle histogram display
-    - `G`: Toggle Gaussian blur
-    - `B`: Toggle Bilateral filter
-    - `Q`: Quit the application
+⚙️ Environment Setup
+1. Using uv
+ (recommended)
+# Create and activate venv
+uv venv .venv
+source .venv/bin/activate   # Linux/macOS
+.venv\Scripts\activate      # Windows
 
-## Usage
+# Sync dependencies
+uv sync
 
-1. **Install [uv](https://github.com/astral-sh/uv):**  
-   Follow the instructions on the [uv GitHub page](https://github.com/astral-sh/uv) to install `uv` for your platform.
+2. Using pip (fallback)
 
-2. **Set up the project:**
-    ```bash
-    # Navigate to your project directory
-    cd path/to/your/project
+If your instructor does not use uv, install directly from requirements.txt:
 
-    # Create a new virtual environment
-    uv venv .venv
+pip install -r requirements.txt
 
-    # Activate the virtual environment
-    # On Unix/macOS:
-    source .venv/bin/activate
-    # On Windows:
-    .venv\Scripts\activate
 
-    # Sync dependencies (ensure you have a requirements.txt or pyproject.toml)
-    uv sync
-    ```
+requirements.txt should contain:
 
-3. **Run the app:**
-    ```bash
-    uv run main.py
-    ```
+numpy>=2.2.6
+opencv-python>=4.12.0.88
+opencv-contrib-python>=4.12.0.88
 
-4. **Interact using the keyboard shortcuts above.**
+▶️ Running the App
+uv run main.py
 
-## Notes
 
-- Requires a working webcam.
-- Tested with Python 3.x and OpenCV 4.x.
+(or python main.py if using pip venv)
 
-## License
+🎮 Controls
+Key	Function
+1	Color mode
+2	Grayscale mode
+3	HSV mode
+A	Brightness/Contrast
+H	Histogram
+G	Gaussian blur
+B	Bilateral filter
+C	Canny edges
+D	Hough lines
+T	Transform mode
+0	Reset transform
+P	Panorama mode ON/OFF
+Z	Capture panorama frame
+O	Build panorama
+X	Reset panorama
+K	Calibrate camera
+R	Run AR mode
+Q	Quit
+📷 Calibration & AR
 
-AIT License.
+Calibration
+
+Print A4_Chessboard_9x6.png
+
+Press K to start calibration (needs 15 captures)
+
+Produces calibration.npz
+
+Augmented Reality
+
+Print A4_ArUco_Marker.png
+
+Press R → AR mode runs
+
+Projects trex_model.obj on detected marker
+
+📝 Notes
+
+Python >=3.12 required
+
+Needs a webcam
+
+Outputs saved under output/
