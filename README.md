@@ -43,10 +43,12 @@ numpy>=2.2.6
 opencv-python>=4.12.0.88
 opencv-contrib-python>=4.12.0.88
 ▶️ Running the App
+Using uv:
+
 bash
 Copy code
 uv run main.py
-Or if using pip:
+Using pip:
 
 bash
 Copy code
@@ -81,7 +83,6 @@ Press K to start calibration (needs 15 captures)
 Produces calibration.npz
 
 Augmented Reality
-
 Print A4_ArUco_Marker.png
 
 Press R to start AR mode
@@ -89,7 +90,6 @@ Press R to start AR mode
 Projects trex_model.obj on the detected marker
 
 📝 Notes
-
 Requires Python >= 3.12
 
 Needs a working webcam
