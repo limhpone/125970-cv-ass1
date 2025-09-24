@@ -1,28 +1,27 @@
 # Computer Vision Assignment 1 – CameraApp
 
-A Python OpenCV application for real-time webcam capture, image processing, panorama creation, camera calibration, and augmented reality.
-This project fulfills Assignment #1 requirements.
+A Python OpenCV application for real-time webcam capture, image processing, panorama creation, camera calibration, and augmented reality.  
+This project fulfills **Assignment #1** requirements.
 
+---
 
 ## ✅ Features Implemented
 
-Image Processing: RGB ↔ Gray ↔ HSV, contrast/brightness, histogram
+- **Image Processing**: RGB ↔ Gray ↔ HSV, contrast/brightness, histogram  
+- **Filters**: Gaussian, Bilateral  
+- **Edges & Lines**: Canny, Hough transform  
+- **Transformations**: Translation, rotation, scaling  
+- **Panorama**: Manual stitching (ORB + Homography, not built-in OpenCV function)  
+- **Camera Calibration**: With chessboard pattern (`A4_Chessboard_9x6.png`)  
+- **Augmented Reality**: AR marker detection + T-Rex model overlay  
 
-Filters: Gaussian, Bilateral
+---
 
-Edges & Lines: Canny, Hough transform
+## ⚙️ Environment Setup
 
-Transformations: Translation, rotation, scaling
+### 1. Using [uv](https://github.com/astral-sh/uv) (recommended)
 
-Panorama: Manual stitching (ORB + Homography, not built-in OpenCV function)
-
-Camera Calibration: With chessboard pattern (A4_Chessboard_9x6.png)
-
-Augmented Reality: AR marker detection + T-Rex model overlay
-
-⚙️ Environment Setup
-1. Using uv
- (recommended)
+```bash
 # Create and activate venv
 uv venv .venv
 source .venv/bin/activate   # Linux/macOS
@@ -30,27 +29,29 @@ source .venv/bin/activate   # Linux/macOS
 
 # Sync dependencies
 uv sync
-
 2. Using pip (fallback)
+If uv is not available, install dependencies directly:
 
-If your instructor does not use uv, install directly from requirements.txt:
-
+bash
+Copy code
 pip install -r requirements.txt
-
-
 requirements.txt should contain:
 
+shell
+Copy code
 numpy>=2.2.6
 opencv-python>=4.12.0.88
 opencv-contrib-python>=4.12.0.88
-
 ▶️ Running the App
+bash
+Copy code
 uv run main.py
+Or if using pip:
 
-
-(or python main.py if using pip venv)
-
-## 🎮 Controls
+bash
+Copy code
+python main.py
+🎮 Controls
 Key	Function
 1	Color mode
 2	Grayscale mode
@@ -70,10 +71,9 @@ X	Reset panorama
 K	Calibrate camera
 R	Run AR mode
 Q	Quit
+
 📷 Calibration & AR
-
 Calibration
-
 Print A4_Chessboard_9x6.png
 
 Press K to start calibration (needs 15 captures)
@@ -84,14 +84,14 @@ Augmented Reality
 
 Print A4_ArUco_Marker.png
 
-Press R → AR mode runs
+Press R to start AR mode
 
-Projects trex_model.obj on detected marker
+Projects trex_model.obj on the detected marker
 
-## 📝 Notes
+📝 Notes
 
-Python >=3.12 required
+Requires Python >= 3.12
 
-Needs a webcam
+Needs a working webcam
 
-Outputs saved under output/
+Outputs are saved under the output/ folder
