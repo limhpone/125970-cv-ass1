@@ -2,11 +2,10 @@
 
 
 A Python OpenCV application for real-time webcam capture, image processing, panorama creation, camera calibration, and augmented reality.  
-This project fulfills **Assignment #1** requirements.
+ **Assignment #1** 
 Aye Khin Khin Hpone (Yolanda Lim)_125970
 
 ---
-
 ## ✅ Features Implemented
 
 - **Image Processing**: RGB ↔ Gray ↔ HSV, contrast/brightness, histogram  
